@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package="github.com/mertess/GoGrpc/gen";
+
+message WordsSeenRequest {
+    string word = 1;
+}
+
+message WordsSeenResponse {
+    int32 word = 1;
+}
+
+service WordsSeenService {
+    rpc CheckWord(WordsSeenRequest) returns (WordsSeenResponse);
+}
