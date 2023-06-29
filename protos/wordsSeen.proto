@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option go_package="github.com/mertess/GoGrpc/gen";
+option go_package="/";
 
 message WordsSeenRequest {
     string word = 1;
