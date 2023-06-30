@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"log"
+	"time"
 
 	"github.com/mertess/GoGrpc/gen"
 	"google.golang.org/grpc"
@@ -15,10 +16,14 @@ func main() {
 	}
 	client := gen.NewWordsSeenServiceClient(conn)
 
-	response, err := client.CheckWord(context.Background(), &gen.WordsSeenRequest{Word: "test"})
-	if err != nil {
-		log.Fatal(err)
-	}
+	for {
+		response, err := client.CheckWord(context.Background(), &gen.WordsSeenRequest{Word: "test"})
+		if err != nil {
+			log.Fatal(err)
+		}
 
-	log.Println(response)
+		log.Println(response)
+
+		time.Sleep(2 * time.Second)
+	}
 }
