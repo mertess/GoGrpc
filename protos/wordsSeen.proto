@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-option go_package="/";
+option go_package="/gen";
 
 message WordsSeenRequest {
     string word = 1;
 }
 
 message WordsSeenResponse {
-    int32 word = 1;
+    int32 count = 1;
 }
 
 service WordsSeenService {

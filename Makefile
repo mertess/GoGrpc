@@ -1,3 +1,2 @@
 generate:
-	mkdir .\gen;
-	protoc --go-grpc_out=gen protos\wordsSeen.proto
+	protoc --go-grpc_out=. --go_out=. protos\wordsSeen.proto
